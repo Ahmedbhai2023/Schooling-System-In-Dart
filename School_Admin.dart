@@ -119,7 +119,17 @@ String BackgroundInfo = '';
 
    print('Background Info?');
   BackgroundInfo = stdin.readLineSync()!; 
+print(fullName);
+print(fatherName);
+print(Cnic);
+print(phoneNumber);
+print(Temail);
+print(Highschoolname);
+print(Graduated);
+print(Yearsattended);
+print(DegreeMajor);
+print(Teachingexperience);
+print(BackgroundInfo);
  }
- 
 
 }
