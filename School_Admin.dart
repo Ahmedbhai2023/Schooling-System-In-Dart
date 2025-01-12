@@ -38,12 +38,12 @@ void main() {
 
   //Login 
     String Login = '';
-
+String LoginEmail = '';
+ String LoginPassward = '';
   while (true) {
     print('This is for ${position} Enter LogIn You');
     Login = stdin.readLineSync()!;  
- String LoginEmail = '';
- String LoginPassward = '';
+
         if (Login == 'LogIn' || Login == 'login') {
       print('Enter Your $position Email');
       LoginEmail = stdin.readLineSync()!;
@@ -51,8 +51,75 @@ void main() {
       LoginPassward = stdin.readLineSync()!;
       break;  
     } else {
-      print('Invalid input. Please enter "Teacher" or "Student".');
+      print('Invalid input. Please enter currect input');
+      
     }
   }
+
+  // Result
+  
+  while(true){
+    if(Email==LoginEmail && Passward==LoginPassward){
+      print('Login Successfully');
+   break;  
+    }
+    else{
+       print('Invalid $position Login input. Please enter currect input');
+        print('Enter Your $position Email');
+      LoginEmail = stdin.readLineSync()!;
+       print('Enter Your $position Passward');
+      LoginPassward = stdin.readLineSync()!;
+
+    }
+  }
+
+// Registration Form
+print('$position Registration Form');
+String fullName = '';
+String fatherName = '';
+String  phoneNumber = '';
+String  Cnic = '';
+String Temail = '';
+String Highschoolname = '';
+String Yearsattended = '';
+String Graduated = '';
+String DegreeMajor = '';
+String Teachingexperience = '';
+String BackgroundInfo = '';
+ if(position=='Teacher'){
+  print('Enter Your FullName');
+  fullName = stdin.readLineSync()!;
+
+  print('Enter Your FatherName');
+  fatherName = stdin.readLineSync()!;
+
+  print('Enter Your Phone Number');
+  phoneNumber = stdin.readLineSync()!;
+
+  print('Enter Your Cnic');
+  Cnic = stdin.readLineSync()!;
+
+  print('Enter Your Email');
+  Temail = stdin.readLineSync()!;
+
+  print('Enter Your High School Name');
+  Highschoolname = stdin.readLineSync()!;
+
+  print('Enter Your Years Attended');
+  Yearsattended = stdin.readLineSync()!;
+
+  print('Are You Graduated ?');
+  Graduated = stdin.readLineSync()!;
+
+ print('Degree Major ?');
+  DegreeMajor = stdin.readLineSync()!;
+  
+   print('Teaching Experience?');
+  Teachingexperience = stdin.readLineSync()!;
+
+   print('Background Info?');
+  BackgroundInfo = stdin.readLineSync()!; 
+ }
+ 
 
 }
