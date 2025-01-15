@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'Test.dart';
 
 void main() {
   // User Postion
@@ -75,6 +76,10 @@ String LoginEmail = '';
 
 // Registration Form
 print('$position Registration Form');
+
+// Teacher User
+
+// Teacher Info Store
 String fullName = '';
 String fatherName = '';
 String  phoneNumber = '';
@@ -86,6 +91,22 @@ String Graduated = '';
 String DegreeMajor = '';
 String Teachingexperience = '';
 String BackgroundInfo = '';
+
+// Student Info Store 
+String StudentName = "";
+String DateofBirth = "";
+String Age = "";
+String Gender = "";
+String PhoneNumber = "";
+String SEmail = "";
+String Address = "";
+String SchoolLastAttended = "";
+String SchoolAddress = "";
+String SchoolYear = "";
+String ParentGuardians = "";
+String Class = "";
+
+
  if(position=='Teacher'){
   print('Enter Your FullName');
   fullName = stdin.readLineSync()!;
@@ -119,17 +140,47 @@ String BackgroundInfo = '';
 
    print('Background Info?');
   BackgroundInfo = stdin.readLineSync()!; 
-print(fullName);
-print(fatherName);
-print(Cnic);
-print(phoneNumber);
-print(Temail);
-print(Highschoolname);
-print(Graduated);
-print(Yearsattended);
-print(DegreeMajor);
-print(Teachingexperience);
-print(BackgroundInfo);
+  print('Form Successfully Submit');
+
+ }
+
+ //Student 
+
+else if(position=='Student'){
+  print('Enter Your Student Name');
+  StudentName = stdin.readLineSync()!;
+
+  print('Enter Your Date of Birth');
+  DateofBirth = stdin.readLineSync()!;
+
+  print('Enter Your Age');
+  Age = stdin.readLineSync()!;
+
+  print('Enter Your Phone Number');
+  PhoneNumber = stdin.readLineSync()!;
+
+  print('Enter Your Student Email');
+  SEmail = stdin.readLineSync()!;
+
+  print('Enter Your Address');
+  Address = stdin.readLineSync()!;
+
+  print('Enter Your School Last Attended');
+  SchoolLastAttended = stdin.readLineSync()!;
+
+  print('Enter Your Pre School Address ?');
+  SchoolAddress = stdin.readLineSync()!;
+
+ print( ' Enter Your Pre School Year ?');
+  SchoolYear = stdin.readLineSync()!;
+  
+   print('Parent/Guardians Information');
+   ParentGuardians = stdin.readLineSync()!;
+
+   print('In which class do you want to take admission?');
+  Class = stdin.readLineSync()!; 
+
+print('Form Successfully Submit');
  }
 
 }
