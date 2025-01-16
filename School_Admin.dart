@@ -2,6 +2,7 @@ import 'dart:io';
 import 'Test.dart';
 
 void main() {
+  
   // User Postion
   String position = '';
 
@@ -182,5 +183,23 @@ else if(position=='Student'){
 
 print('Form Successfully Submit');
  }
+//Quiz
+ String Quiz = ""; 
+
+print('Enter Quiz And Start Your Quiz');
+ Quiz = stdin.readLineSync()!;
+ 
+ while(true){
+    if(Quiz=="Quiz" && position=="Teacher"){
+      print('Quiz Start');
+      print(teacherQuiz());
+   break;  
+    }
+    else{
+       print('Invalid $position Quiz input. Please enter currect input');
+        print('Enter Quiz');
+    }
+  }
+
 
 }
