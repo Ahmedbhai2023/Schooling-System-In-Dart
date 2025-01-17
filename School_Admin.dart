@@ -195,10 +195,16 @@ print('Enter Quiz And Start Your Quiz');
       print(teacherQuiz());
    break;  
     }
+   else if(Quiz=="Quiz" && position=="Student"){
+      print('Quiz Start');
+      print(studentQuiz());
+   break;  
+    }
     else{
        print('Invalid $position Quiz input. Please enter currect input');
         print('Enter Quiz');
-    }
+        break;
+    } 
   }
 
 

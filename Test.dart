@@ -1,88 +1,137 @@
-import 'dart:ffi';
+import 'dart:io';
+
+void main() {
+
+}
 
 // Teacher Quiz
 teacherQuiz(){
-  Map Quiz = {
-"Question-1":{
-  "Q-1" : "Not only his parents __________ his friends __________ proud of his results.",
-  "A": "and also, was",
-  "B": "and also, were",
-  "C" : "but also, was",
-  "D" : " but also, were",
-},
-"Question-2":{
-"Q-2" : "The sun rises _____ the east and sets _____ the west.",
-"A" : " from, in",
-"B" : " in, from",
-"C" : "in, in",
-"D" : "in, towards",
 
-},
-"Question-3":{
-"Q-3" : " The woman __________ you met is a software architecture.",
-"A" : " who",
-"B" : " whose",
-"C" : " whom",
-"D" : " which",
+  List<Map<String, dynamic>> quiz = [
+    {
+      'question': 'If I ________ money, I would have bought it yesterday.',
+      'options': ['1. have', '2. had', '3. have had', '4. had had'],
+      'answer': 4,
+    },
+    {
+      'question': 'If I had money, I ________ it now.',
+      'options': ['1.  will buy', '2. would buy', '3. would have bought', '4. have bought'],
+      'answer': 2,
+    },
+    {
+      'question': 'If I ________ money, I will buy it tomorrow.',
+      'options': ['1.  have', '2. had', '3. will have', '4. will have had'],
+      'answer': 1,
+    },
+    
+    {
+      'question': 'My parents, including my little brother ________ coming to meet me.',
+      'options': ['1.  are', '2. is', '3. was', '4. None of these'],
+      'answer': 1,
+    },
+    {
+      'question': 'There _____ some students who _____ to attend the event.',
+      'options': ['1.  has, wants', '2.  are, wants', '3. is, want', '4. are, want'],
+      'answer': 4,
+    },
+  ];
 
-},
-"Question-4":{
-"Q-4" : "  The word ‘Trepidation’ is opposite to",
-"A" : " fear",
-"B" : " calm",
-"C" : " tiredness",
-"D" : " exhibition",
+  int score = 0; // Initialize the score
 
-},
-"Question-5":{
-"Q-5" : "  The word ‘Strive’ is similar to",
-"A" : " try hard",
-"B" : " luck",
-"C" : " speak loudly",
-"D" : " issue",
+  print('Welcome to the Quiz!\n');
 
-},
-"Question-6":{
-"Q-6" : " If I ________ money, I would have bought it yesterday.",
-"A" : " have",
-"B" : " had",
-"C" : "  have had",
-"D" : " had had",
+  // Loop through each question
+  for (int i = 0; i < quiz.length; i++) {
+    print('Question ${i + 1}: ${quiz[i]['question']}');
+    for (String option in quiz[i]['options']) {
+      print(option);
+    }
 
-},
-"Question-7":{
-"Q-7" : " If I had money, I ________ it now.",
-"A" : " will buy",
-"B" : " would buy",
-"C" : " would have bought",
-"D" : " have bought",
+    stdout.write('Enter your answer (1-4): ');
+    int? userAnswer = int.tryParse(stdin.readLineSync()!);
 
-},
-"Question-8":{
-"Q-8" : " If I ________ money, I will buy it tomorrow.",
-"A" : " have",
-"B" : " had",
-"C" : " will have",
-"D" : " will have had",
+    if (userAnswer != null && userAnswer == quiz[i]['answer']) {
+      print('Correct!\n');
+      score++;
+    } else {
+      print('Wrong! The correct answer was ${quiz[i]['answer']}.\n');
+    }
+  }
 
-},
-"Question-9":{
-"Q-9" : " On leaving the bank, Jolie was robbed ________ purse.",
-"A" : " by her",
-"B" : " by hers",
-"C" : " of her",
-"D" : " of hers",
+  print('Quiz Complete!');
+  print('Your score: $score/${quiz.length}');
 
-},
-"Question-10":{
-"Q-10" : " This store remains open ________ eight to seven.",
-"A" : " by",
-"B" : " from",
-"C" : " between",
-"D" : " during",
-
+  if (score == quiz.length) {
+    print('Excellent work! You are Selected');
+  } else if (score >= quiz.length / 2) {
+    print('Good job! You scored above average.');
+  } else {
+    print('Better luck next time! Keep practicing.');
+  }
 }
-  }; 
 
-  print(Quiz);
+// Student Quiz
+studentQuiz(){
+
+  List<Map<String, dynamic>> quiz = [
+    {
+      'question': 'She ____ (smile) at me.',
+      'options': ['1. Smile', '2. Is smiles', '3. Is smile', '4. Smiles'],
+      'answer': 4,
+    },
+    {
+      'question': 'Last month, I left Lombok Island. I ____(go) there with a group from the school.',
+      'options': ['1.  Go', '2. Went', '3. Gone', '4. Going'],
+      'answer': 2,
+    },
+    {
+      'question': 'There were ____ students in the class.',
+      'options': ['1.  Some', '2. Some of the', '3. Big', '4. Little'],
+      'answer': 1,
+    },
+    
+    {
+      'question': 'The person ____(who) you met this morning was my uncle.',
+      'options': ['1.  Which', '2. That', '3. Who', '4. Whom'],
+      'answer': 4,
+    },
+    {
+      'question': 'There is ____ new kid in class. His name is Rio.',
+      'options': ['1.  An', '2.  The', '3. A', '4. are'],
+      'answer': 3,
+    },
+  ];
+
+  int score = 0; // Initialize the score
+
+  print('Welcome to the Quiz!\n');
+
+  // Loop through each question
+  for (int i = 0; i < quiz.length; i++) {
+    print('Question ${i + 1}: ${quiz[i]['question']}');
+    for (String option in quiz[i]['options']) {
+      print(option);
+    }
+
+    stdout.write('Enter your answer (1-4): ');
+    int? userAnswer = int.tryParse(stdin.readLineSync()!);
+
+    if (userAnswer != null && userAnswer == quiz[i]['answer']) {
+      print('Correct!\n');
+      score++;
+    } else {
+      print('Wrong! The correct answer was ${quiz[i]['answer']}.\n');
+    }
+  }
+
+  print('Quiz Complete!');
+  print('Your score: $score/${quiz.length}');
+
+  if (score == quiz.length) {
+    print('Excellent work! You are Selected');
+  } else if (score >= quiz.length / 2) {
+    print('Good job! You scored above average.');
+  } else {
+    print('Better luck next time! Keep practicing.');
+  }
 }
