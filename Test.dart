@@ -1,5 +1,6 @@
 import 'dart:io';
-
+import 'Student.dart';
+import 'Teacher.dart';
 void main() {
 
 }
@@ -63,6 +64,8 @@ teacherQuiz(){
 
   if (score == quiz.length) {
     print('Excellent work! You are Selected');
+      print('For Teacher');
+    print(Forteacher());
   } else if (score >= quiz.length / 2) {
     print('Good job! You scored above average.');
   } else {
@@ -129,6 +132,8 @@ studentQuiz(){
 
   if (score == quiz.length) {
     print('Excellent work! You are Selected');
+    print('For Student');
+    print(studentCourse());
   } else if (score >= quiz.length / 2) {
     print('Good job! You scored above average.');
   } else {
