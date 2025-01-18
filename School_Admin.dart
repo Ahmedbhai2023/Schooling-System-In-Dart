@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'Test.dart';
-import 'Student.dart';
 import 'Teacher.dart';
 
 void main() {
